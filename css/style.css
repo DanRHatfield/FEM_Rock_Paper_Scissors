@@ -1,0 +1,66 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+body {
+  background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+main {
+  height: 95vh;
+  width: 95vw;
+  border: 1px solid red;
+  margin: 2% auto;
+
+}
+
+div {
+  background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+/* 
+.outerCircle {
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  /* background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%)); */
+  border-radius: 50%;
+} */
+
+.innerCircle {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  /* background: white; */
+  background-image: url("/images/icon-scissors.svg") ;
+  border-radius: 50%;
+}
+
+#rules {
+  position: fixed;
+    right: 2%;
+    bottom: 2%;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+}
