@@ -309,6 +309,7 @@ main {
   #rules {
     right: auto;
     bottom: 5vh;
+    cursor: pointer;
   }
 
   #rulesOverlay {
