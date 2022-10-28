@@ -17,37 +17,112 @@
 /* ADDITIONAL STYLES
 /*******************************************/
 body {
-  background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-}
+  background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));}
 
 main {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
   height: 95vh;
   width: 95vw;
   border: 1px solid red;
   margin: 2% auto;
-
 }
 
-div {
-  background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+#middle {
+  /* display: flex; */
+  justify-content: center;
+  width: 480px;
+  height: 430px;
+  flex-wrap: wrap;
+  /* border: 1px solid yellow; */
+  margin: 50px auto;
+  background-image: url(../images/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-/* 
-.outerCircle {
-  width: 100px;
+
+.top {
+  width: 700px;
+  height: 150px;
+  border: 3px solid hsl(217, 16%, 45%);
+  padding: 2% 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+}
+
+#rps_image {
   height: 100px;
-  background-color: transparent;
-  /* background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%)); */
+}
+
+
+.outerCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-} */
+}
 
 .innerCircle {
   display: inline-block;
-  width: 70px;
-  height: 70px;
-  /* background: white; */
-  background-image: url("/images/icon-scissors.svg") ;
+  width: 150px; /* previously 150px */
+  height: 150px; /* previously 150px */
+  background: white;
   border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: inset rgba(0, 0, 0, 0.2) 0px 5px;
+}
+
+.scissors, .rock, .paper {
+  cursor: pointer;
+}
+
+.scissors {
+  margin: auto;
+  margin-top: 230px;
+}
+
+.scissors .innerCircle {
+  background-image: url(../images/icon-scissors.svg);
+}
+
+.scissors.outerCircle {
+  background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  box-shadow: rgb(200 140 70 / 90%) 0px 8px;
+}
+
+.rock {
+  float: left;
+}
+
+.rock .innerCircle {
+  background-image: url(../images/icon-rock.svg);
+}
+
+.rock.outerCircle {
+  background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  box-shadow: rgb(200 50 70 / 90%) 0px 8px;
+   
+}
+
+.paper {
+  float: right;
+}
+
+.paper .innerCircle {
+  background-image: url(../images/icon-paper.svg);
+}
+
+.paper.outerCircle {
+  background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  box-shadow: rgb(50 50 200 / 90%) 0px 8px;
 }
 
 #rules {
@@ -60,7 +135,97 @@ div {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    border: 2px solid white;
+    border: 1px solid white;
     background: transparent;
     color: white;
+}
+
+
+
+#score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: white;
+  color: hsl(214, 47%, 23%);
+  width: 150px;
+  height: 115px;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 2em;
+}
+
+#scoreSmall {
+  font-size: 0.4em;
+}
+
+#scoreLarge {
+  display: inline-block;
+  width: auto;
+  height: 80px;
+}
+
+#rulesOverlay {
+  display: none;
+  background: rgba(211,211,211,15%);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  height: 35%;
+  width: 27%;
+  background: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 30%;
+  border-radius: 3%;
+}
+
+.pSelected, .cSelected {
+  display: none;
+}
+
+#displayResult {
+  margin: 0 auto;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#playerSelected .outerCircle, #computerSelected .outerCircle  {
+  width: 250px;
+  height: 250px;
+}
+
+#playerSelected .innerCircle, #computerSelected .innerCircle {
+  width: 200px;
+  height: 200px;
+}
+
+#playerSelected .scissors, #computerSelected .scissors  {
+  margin-top: 0;
+}
+
+#winOrLose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#youWon, #youLose {
+  display: block;
+  font-size: 3.5em;
+  color: white;
+}
+
+#playAgain {
+  width: 220px;
+  height: 50px;
+  border-radius: 10px;
+  color: red;
+  font-size: .9em;
+  letter-spacing: 2px;
 }

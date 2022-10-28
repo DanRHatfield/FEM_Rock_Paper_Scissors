@@ -14,27 +14,63 @@
 </head>
 <body>
   <main>
-  <img src="file:///C:/Users/danrh/Desktop/LearnWithLeon/Fronted_Mentor_Challenges/rock-paper-scissors-master/images/logo.svg" alt="">
-  Score
+    <section>
+      <div class="top">
+        <img src="file:///C:/Users/danrh/Desktop/LearnWithLeon/Fronted_Mentor_Challenges/rock-paper-scissors-master/images/logo.svg" alt="" id="rps_image">
+        <div id="score">
+          <span id="scoreSmall">SCORE</span>
+          <span id="scoreLarge"></span>
+          </div> 
+      </div>
+    </section>
+      
 
+      You Picked
+      The House Picked
+    <section id="middle">
+      <div class="rock outerCircle">
+        <span class="innerCircle">
+        </span>
+      </div>
 
-  
+      <div class="paper outerCircle">
+        <span class="innerCircle">
+        </span>
+      </div>
 
-  You Picked
-  The House Picked
-  <div class="outerCircle">
-  <span class="innerCircle">
-    <!-- <img src="images/icon-paper.svg" alt=""> -->
-  </span>
-  </div>
-  
-  <img src="images/icon-scissors.svg" alt="">
-  <img src="images/icon-rock.svg" alt="">
+      <div class="scissors outerCircle">
+        <span class="innerCircle">
+        </span>
+      </div>
+    </section>  
   <div id="rules">Rules</div>
-  You Win
-  You Lose
 
-  Play Again
+<div id="rulesOverlay">
+  <p id="rulesText">RULES</p>
+  <img src="file:///C:/Users/danrh/Desktop/LearnWithLeon/Fronted_Mentor_Challenges/rock-paper-scissors-master/images/icon-close.svg" alt="">
+  <img src="file:///C:/Users/danrh/Desktop/LearnWithLeon/Fronted_Mentor_Challenges/rock-paper-scissors-master/images/image-rules.svg" alt="">
+</div>
+
+<section id="displayResult">
+  <div id="playerSelected">
+    <div class="rock outerCircle pSelected"><span class="innerCircle"></span></div>
+    <div class="paper outerCircle pSelected"><span class="innerCircle"></span></div>
+    <div class="scissors outerCircle pSelected"><span class="innerCircle"></span></div>
+  </div>
+
+  <div id="winOrLose">
+      <span id="youWon">YOU WIN</span>
+      <span id="youLose">YOU LOSE</span>
+      <button id="playAgain">PLAY AGAIN</button>
+  </div>
+
+  <div id="computerSelected">
+    <div class="rock outerCircle pSelected"><span class="innerCircle"></span></div>
+    <div class="paper outerCircle pSelected"><span class="innerCircle"></span></div>
+    <div class="scissors outerCircle pSelected"><span class="innerCircle"></span></div>
+  </div>
+</section>
+
   </main>
 
 <!--   
@@ -42,7 +78,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
-
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 
