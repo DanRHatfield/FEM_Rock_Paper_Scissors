@@ -3,6 +3,7 @@ document.querySelector("#rulesOverlay").addEventListener("click", rulesOff);
 document.querySelector('.rock').addEventListener('click', choseRock)
 document.querySelector('.scissors').addEventListener('click', choseScissors)
 document.querySelector('.paper').addEventListener('click', chosePaper)
+document.querySelector('#playAgain').addEventListener('click', playAgain)
 
 let playerChoice = 0
 let computerChoice = 0
@@ -62,18 +63,25 @@ function whoWon(p) {
   else if(p === "Rock" && computerChoice === "Scissors") {
     console.log(`Rock beats Scissors, player wins!`)
     displayResult(p, computerChoice)
+    document.querySelector('#youWon').style.display = "block"
+    setTimeout(() => { updateScore() }, 4000);
   }
   else if(p === "Scissors" && computerChoice === "Paper") {
     console.log(`Scissors beats Paper, player wins!`)
-    displayResult(p, computerChoice)
+    displayResult(p, computerChoice)    
+    document.querySelector('#youWon').style.display = "block"
+    setTimeout(() => { updateScore() }, 4000);    
   }
   else if(p === "Paper" && computerChoice === "Rock") {
     console.log(`Paper beats Rock, player wins!`)
     displayResult(p, computerChoice)
+    document.querySelector('#youWon').style.display = "block"
+    setTimeout(() => { updateScore() }, 4000);
   }
   else {
     console.log(`${computerChoice} beats ${p}, the computer wins!`)
     displayResult(p, computerChoice)
+    document.querySelector('#youLose').style.display = "block"
   }
 
 }
@@ -101,13 +109,38 @@ function displayResult(p, c) {
     setTimeout(() => {
       if(c === "Rock") {
         document.querySelector('#computerSelected').querySelector('.rock').style.display = "flex"
+        winOrLose()
       }
       else if(c === "Scissors") {
         document.querySelector('#computerSelected').querySelector('.scissors').style.display = "flex"
+        winOrLose()
       }
       else {
         document.querySelector('#computerSelected').querySelector('.paper').style.display = "flex"
+        winOrLose()
       }
     }, 2000);
   }
+}
+
+function winOrLose() {
+  setTimeout(() => {
+    document.querySelector('#winOrLose').style.display = "flex"
+  }, 2000);
+}
+
+function playAgain() {
+  playerChoice = 0
+  computerChoice = 0
+
+  document.querySelector('#playerSelected').querySelector('.rock').style.display = "none"
+  document.querySelector('#playerSelected').querySelector('.scissors').style.display = "none"
+  document.querySelector('#playerSelected').querySelector('.paper').style.display = "none"
+  document.querySelector('#computerSelected').querySelector('.rock').style.display = "none"
+  document.querySelector('#computerSelected').querySelector('.scissors').style.display = "none"
+  document.querySelector('#computerSelected').querySelector('.paper').style.display = "none"
+  document.querySelector('#youWon').style.display = "none"
+  document.querySelector('#youLose').style.display = "none"
+  document.querySelector("#middle").style.display = "block"
+  document.querySelector("#winOrLose").style.display = "none"
 }
