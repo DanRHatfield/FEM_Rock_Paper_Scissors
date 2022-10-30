@@ -17,7 +17,9 @@
 /* ADDITIONAL STYLES
 /*******************************************/
 body {
-  background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));}
+  background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
 
 main {
   display: flex;
@@ -78,6 +80,7 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: inset rgba(0, 0, 0, 0.2) 0px 5px;
+  background-size: 75px;
 }
 
 .scissors, .rock, .paper {
@@ -164,6 +167,8 @@ main {
   display: inline-block;
   width: auto;
   height: 80px;
+  font-size: 2em;
+  font-weight: 800px;
 }
 
 #rulesOverlay {
@@ -190,9 +195,13 @@ main {
   margin: 0 auto;
     width: 900px;
     height: 500px;
-    display: flex;
+    display: none;
     justify-content: space-around;
     align-items: center;
+}
+
+#playerSelected, #computerSelected {
+  height: 318px;
 }
 
 #playerSelected .outerCircle, #computerSelected .outerCircle  {
@@ -227,5 +236,14 @@ main {
   border-radius: 10px;
   color: red;
   font-size: .9em;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.picked {
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 50px;
   letter-spacing: 2px;
 }
