@@ -161,6 +161,7 @@ main {
 
 #scoreSmall {
   font-size: 0.4em;
+  color: hsl(229, 64%, 46%)
 }
 
 #scoreLarge {
