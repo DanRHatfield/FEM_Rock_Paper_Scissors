@@ -93,6 +93,7 @@ function updateScore() {
 
 function displayResult(p, c) {
   if(p !== '') {
+    document.querySelector(`#displayResult`).style.display = "flex"    
     if(p === "Rock") {
       document.querySelector('#playerSelected').querySelector('.rock').style.display = "flex"
       setTimeout(3000)
@@ -143,4 +144,7 @@ function playAgain() {
   document.querySelector('#youLose').style.display = "none"
   document.querySelector("#middle").style.display = "block"
   document.querySelector("#winOrLose").style.display = "none"
+  document.querySelector(`#displayResult`).style.display = "none"
 }
+
+// Look into a different way of doingthis.
