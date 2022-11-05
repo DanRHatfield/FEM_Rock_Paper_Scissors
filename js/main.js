@@ -4,6 +4,7 @@ document.querySelector('.rock').addEventListener('click', choseRock)
 document.querySelector('.scissors').addEventListener('click', choseScissors)
 document.querySelector('.paper').addEventListener('click', chosePaper)
 document.querySelector('#playAgain').addEventListener('click', playAgain)
+document.querySelector('#playAgain_mobile').addEventListener('click', playAgain)
 
 let playerChoice = 0
 let computerChoice = 0
@@ -64,24 +65,28 @@ function whoWon(p) {
     console.log(`Rock beats Scissors, player wins!`)
     displayResult(p, computerChoice)
     document.querySelector('#youWon').style.display = "block"
+    document.querySelector('#youWon_mobile').style.display = "block"
     setTimeout(() => { updateScore() }, 4000);
   }
   else if(p === "Scissors" && computerChoice === "Paper") {
     console.log(`Scissors beats Paper, player wins!`)
     displayResult(p, computerChoice)    
     document.querySelector('#youWon').style.display = "block"
+    document.querySelector('#youWon_mobile').style.display = "block"
     setTimeout(() => { updateScore() }, 4000);    
   }
   else if(p === "Paper" && computerChoice === "Rock") {
     console.log(`Paper beats Rock, player wins!`)
     displayResult(p, computerChoice)
     document.querySelector('#youWon').style.display = "block"
+    document.querySelector('#youWon_mobile').style.display = "block"
     setTimeout(() => { updateScore() }, 4000);
   }
   else {
     console.log(`${computerChoice} beats ${p}, the computer wins!`)
     displayResult(p, computerChoice)
     document.querySelector('#youLose').style.display = "block"
+    document.querySelector('#youLose_mobile').style.display = "block"
   }
 
 }
@@ -126,7 +131,13 @@ function displayResult(p, c) {
 
 function winOrLose() {
   setTimeout(() => {
-    document.querySelector('#winOrLose').style.display = "flex"
+    console.log(window.innerWidth)
+    if(window.innerWidth > 940) {
+      document.querySelector('#winOrLose').style.display = "flex"
+    }
+    else {
+      document.querySelector('#winOrLose_mobile').style.display = "flex"
+    }
   }, 2000);
 }
 
@@ -144,6 +155,9 @@ function playAgain() {
   document.querySelector('#youLose').style.display = "none"
   document.querySelector("#middle").style.display = "block"
   document.querySelector("#winOrLose").style.display = "none"
+  document.querySelector('#youWon_mobile').style.display = "none"
+  document.querySelector('#youLose_mobile').style.display = "none"
+  document.querySelector("#winOrLose_mobile").style.display = "none"
   document.querySelector(`#displayResult`).style.display = "none"
 }
 
