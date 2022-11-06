@@ -19,6 +19,7 @@
 body {
   background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
   font-family: 'Barlow Semi Condensed', sans-serif;
+  margin: 0;
 }
 
 main {
@@ -26,10 +27,10 @@ main {
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  height: 95vh;
-  width: 95vw;
-  border: 1px solid red;
-  margin: 2% auto;
+  height: 98vh;
+  width: 100vw;
+  /* border: 1px solid red; */
+  margin: 1vh auto;
 }
 
 #middle {
@@ -98,7 +99,7 @@ main {
 
 .scissors.outerCircle {
   background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-  box-shadow: rgb(200 140 70 / 90%) 0px 8px;
+  box-shadow: rgb(200 140 70 / 90%) 0px 5px;
 }
 
 .rock {
@@ -111,7 +112,7 @@ main {
 
 .rock.outerCircle {
   background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-  box-shadow: rgb(200 50 70 / 90%) 0px 8px;
+  box-shadow: rgb(200 50 70 / 90%) 0px 5px;
    
 }
 
@@ -132,8 +133,8 @@ main {
   position: fixed;
     right: 2%;
     bottom: 2%;
-    width: 100px;
-    height: 30px;
+    width: 120px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,7 +196,7 @@ main {
 
 #displayResult {
   /* margin: 0 auto; */
-    width: 900px;
+    width: 90vw;
     height: 500px;
     display: none;
     justify-content: space-around;
@@ -240,6 +241,7 @@ main {
   font-size: .9em;
   letter-spacing: 2px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .picked {
@@ -248,4 +250,97 @@ main {
   font-size: 1em;
   margin-bottom: 50px;
   letter-spacing: 2px;
+}
+
+@media (min-width: 480px) and (max-width: 720px) {
+  .outerCircle, #playerSelected .outerCircle, #computerSelected .outerCircle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  .innerCircle, #playerSelected .innerCircle, #computerSelected .innerCircle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-size: 60px;
+  }
+
+  .top, #middle {
+    width: 95vw;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .outerCircle, #playerSelected .outerCircle, #computerSelected .outerCircle {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+  }
+
+  .innerCircle, #playerSelected .innerCircle, #computerSelected .innerCircle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: 60px;
+  }
+
+
+  .top {
+    width: 90vw;
+    height: auto;
+  }
+
+  #rps_image {
+    height: 5vh;
+  }
+  
+  #score {
+    width: 25vw;
+    height: auto;
+  }
+
+  #middle {
+    width: 90vw;
+    height: auto;
+    margin: 16vh auto;
+  }
+
+  #rules {
+    right: auto;
+    bottom: 5vh;
+  }
+
+  #rulesOverlay {
+    height: 40vh;
+    width: 90vw;
+  }
+
+  #displayResult {
+    width: 95vw;
+    height: auto;
+    margin: 10vh auto 5vh auto; 
+  }
+
+  #playerSelected, #computerSelected {
+    width: 45vw;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .picked {
+    margin-top: 50px;
+  }
+
+  #playerSelected .scissors, #computerSelected .scissors {
+    margin: 0;
+  }
+  
+}
+
+@media screen and (max-width: 360px) {
+  body {
+    width: 400px
+  }
 }
